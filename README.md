@@ -40,12 +40,12 @@ requirements.txt 에 있는 내용대로 라이브러리를 설치하는 방법�
 pip install -r requirements.txt
 ```
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/31561cd1-9e9b-415a-a193-b80c3c80b95d)
+
 
 위와 같은 구조로 웹서버를 만든다.
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled%201.png)
-
+![image](https://github.com/kbigdata005/web_server/assets/139095086/dd26b6fe-5f88-4a07-bc42-87c638eca178)
 다음과 같은 기능을 구현하기 위해
 
 url : http://localhost:5000
