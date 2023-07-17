@@ -7,6 +7,11 @@
 </head>
 <body>
     <h1>Hello World!!</h1>
-    <span> {{ header }} </span>
+    {% if name and hello %}
+    <h3> {{ name }} 님 {{ hello }} </h3>
+
+    {% else %}
+    <h3>입력한 데이터가 없습니다....</h3>
+    {% endif %}
 </body>
 </html>
