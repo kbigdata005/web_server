@@ -49,6 +49,8 @@ class Mysql:
         db.commit()
         db.close()
 
+        return result
+
     def verify_password(self ,email, password):
         db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
         curs = db.cursor()
@@ -81,7 +83,7 @@ class Mysql:
         
         db.close()
     
-mysql = Mysql(password='java')
+# mysql = Mysql(password='java')
 # rows = mysql.get_user()
 # print(rows)
 
