@@ -8,13 +8,14 @@
 </head>
 <body>
     <h1>Hello World!!</h1>
-    {% if name and hello %}
-    <h3> {{ name }} 님 {{ hello }} </h3>
-
+    {% if session['is_loged_in'] %}
+    <h3> {{ session['username'] }} 님 환영합니다. </h3>
+    <a href="/logout"><button class="btn bg-danger">로그아웃</button></a>
     {% else %}
-    <h3>입력한 데이터가 없습니다....</h3>
-    {% endif %}
+    <h3>게스트로 접속하셨습니다.</h3>
     <a href="/register"><button class="btn bg-warning">회원가입</button></a>
     <a href="/login"><button class="btn bg-primary">로그인</button></a>
+    {% endif %}
+    
 </body>
 </html>

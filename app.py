@@ -1,4 +1,4 @@
-from flask import Flask , render_template ,request ,redirect
+from flask import Flask , render_template ,request ,redirect ,session
 from data import Articles
 from mysql import Mysql
 import config
@@ -9,6 +9,7 @@ import pymysql
 app = Flask(__name__)
 
 mysql = Mysql(password=config.PASSWORD)
+app.secret_key = "eungok"
 
 @app.route('/' , methods=['GET','POST'])
 def index():
@@ -89,8 +90,14 @@ def login():
         print(rows)
 
         if rows:
-            return str(rows[0][0])
+            result = mysql.verify_password(password, rows[0][4])
+            if result:
+                session['is_loged_in'] = True
+                session['username'] = rows[0][1]
+                return redirect('/')
+            else:
+                return redirect('/login')
         else:
-            return "User isNot Founded"
+            return render_template('login.html')
 if __name__ == '__main__':
     app.run(debug=True)
