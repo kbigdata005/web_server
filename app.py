@@ -1,17 +1,28 @@
-from flask import Flask , render_template ,request ,redirect ,session
+from flask import Flask , render_template ,request ,redirect ,session 
 from data import Articles
 from mysql import Mysql
 import config
 import pymysql
+from datetime import timedelta
 # print(Articles())
-
+from functools import wraps
 
 app = Flask(__name__)
+# app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=1)
 
 mysql = Mysql(password=config.PASSWORD)
-app.secret_key = "eungok"
+
+def is_loged_in(func):
+    @wraps(func)
+    def wrap(*args , **kwargs):
+        if 'is_loged_in' in session:
+            return func(*args , **kwargs)
+        else:
+            return redirect('/login')
+    return wrap
 
 @app.route('/' , methods=['GET','POST'])
+@is_loged_in
 def index():
     # if request.method == "GET":
     #     os_info = dict(request.headers)
@@ -27,7 +38,7 @@ def index():
     #     data_2 = request.form['hello']
     #     print(data_2)
         # return render_template('index.html',header= "안녕하세요 김태경입니다.!!!")
-
+    # print(session['is_loged_in'])
     return render_template('index.html')
 
 @app.route('/hello', methods=['GET', 'POST'])
@@ -95,9 +106,24 @@ def login():
                 session['is_loged_in'] = True
                 session['username'] = rows[0][1]
                 return redirect('/')
+                # return render_template('index.html', is_loged_in = session['is_loged_in'] , username=session['username'] )
             else:
                 return redirect('/login')
         else:
             return render_template('login.html')
+        
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
+@app.route('/edit/<ids>')
+def edit(ids):
+    return ids
+
+@app.route('/delete/<ids>')
+def delete(ids):
+    return ids
+
 if __name__ == '__main__':
+    app.config['SECRET_KEY'] ='eungok'
     app.run(debug=True)

@@ -19,6 +19,11 @@
           <button>제출</button>
         </div>
       </form>
-      
+      <script>
+            if ("{{ session['username'] }}" != "1username"){
+                alert("관리자 아이디가 아닙니다!!");
+            }
+        
+    </script>
 </body>
 </html>

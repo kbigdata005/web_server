@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>list page</title>
 </head>
 <body>
@@ -26,17 +27,29 @@
             <th>Description</th>
             <th>Author</th>
             <th>Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
             <tr align = "center">
                 <td>{{ x['id'] }}</td>
                 <td>{{ x['title'] }}</td>
                 <td>{{ x['desc'] }}</td>
                 <td>{{ x['author'] }}</td>
                 <td>{{ x['create_at'] }}</td>
+                <td><a href="/edit/{{ x['id'] }}"><button class="btn bg-primary">편집</button></a></td>
+                <td><a href="/delete/{{ x['id'] }}"><button class="btn bg-danger" onclick="return confirm_func()">삭제</button></a></td>
             </tr>
                     
             <br><br>
     
         {% endfor %}
     </table>
+
+    <script>
+        function confirm_func() {
+            result = confirm('정말 삭제 하시겠습니까?')
+            console.log(result)
+            return result
+        }
+    </script>
 </body>
 </html>
