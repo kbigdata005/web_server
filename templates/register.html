@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <title>Join Page</title>
 </head>
 <body>
+
 <form action="/register" method="post" class="form-example">
 	<div class="form-example">
 		<label for="name">Enter Username: </label>
@@ -24,8 +26,16 @@
 		<input type="password" name="password" id="password" required>
 	</div>
 	<div class="form-example">
-		<input type="submit" value="전송!">
+		<input class="btn bg-success" type="submit" value="전송!">
 	</div>
+    {% if data == 1 %}
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+        <div>
+          Already User is Exist !!!
+        </div>
+      </div>
+    {% endif %}
 </form>
 </body>
 </html>
