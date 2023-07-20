@@ -1,4 +1,4 @@
-from flask import Flask , render_template ,request ,redirect ,session 
+from flask import Flask , render_template ,request ,redirect ,session ,url_for
 from data import Articles
 from mysql import Mysql
 import config
@@ -8,7 +8,9 @@ from datetime import timedelta
 from functools import wraps
 
 app = Flask(__name__)
-# app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=1)
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=5)
+app.config['SESSION_PERMANENT'] = False
+app.config['SESSION_TYPE'] = 'filesystem'
 
 mysql = Mysql(password=config.PASSWORD)
 
@@ -22,7 +24,7 @@ def is_loged_in(func):
     return wrap
 
 @app.route('/' , methods=['GET','POST'])
-@is_loged_in
+# @is_loged_in
 def index():
     # if request.method == "GET":
     #     os_info = dict(request.headers)
