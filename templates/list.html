@@ -3,30 +3,66 @@
 {% include 'nav.html' %}
 {% endblock %}
 {% block body %}
- <div class="container">
-    <p class="h4">List</p>
-    <table border = "1" align = "center">
-        {% for x in data %}
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Author</th>
-            <th>Time</th>
-            <th>Edit</th>
-            <th>Delete</th>
-            <tr align = "center">
-                <td>{{ x['id'] }}</td>
-                <td>{{ x['title'] }}</td>
-                <td>{{ x['desc'] }}</td>
-                <td>{{ x['author'] }}</td>
-                <td>{{ x['create_at'] }}</td>
-                <td><a href="/edit/{{ x['id'] }}"><button class="btn bg-primary">편집</button></a></td>
-                <td><a href="/delete/{{ x['id'] }}"><button class="btn bg-danger" onclick="return confirm_func()">삭제</button></a></td>
-            </tr>      
-            <br><br>
-        {% endfor %}
-    </table>
+<div class="container" style="margin-top: 3rem;">
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Data Info</h1>
+    <p class="mb-4">Are U Hungry? <a target="_blank"
+            href="https://datatables.net">This data is important</a>.</p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">게시판 <a  style="text-align:right;" href="/create_list" type="button" class="btn btn-success">게시글 작성</a></h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>TITLE</th>
+                            <th>DESCRIPTION</th>
+                            <th>Author</th>
+                            <th>Date</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>TITLE</th>
+                            <th>DESCRIPTION</th>
+                            <th>Author</th>
+                            <th>Date</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for x in data %}
+                        <tr>
+                            <td>{{ x[0] }}</td>
+                            <td>{{ x[1] }}</td>
+                            <td>{{ x[2] }}</td>
+                            <td>{{ x[3] }}</td>
+                            <td>{{ x[4] }}</td>
+                            <td><a href="/edit/{{ x[0] }}"><button class="btn bg-primary">편집</button></a></td>
+                            <td><a href="/delete/{{ x[0] }}"><button class="btn bg-danger"
+                                        onclick="return confirm_func()">삭제</button></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
+<!-- /.container-fluid -->
     <script>
         function confirm_func() {
             result = confirm('정말 삭제 하시겠습니까?')
@@ -34,4 +70,8 @@
             return result
         }
     </script>
+
+
+</div>
+
 {% endblock %}

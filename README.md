@@ -105,3 +105,106 @@ def index():
 
 ...
 ```
+
+
+def insert_list(self , title , desc , author):
+        db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
+        curs = db.cursor()
+        
+        sql = '''insert into `list` (`title` , `desc` , `author`) values(%s,%s,%s)'''
+        result = curs.execute(sql,[title , desc , author])
+        print(result)
+        db.commit()
+        db.close()
+
+        return result
+
+....
+```
+
+app.py파일에 다음과 같은 코드를 추가한다.
+
+```python
+@app.route('/list', methods=['GET' , 'POST'])
+def list():
+    if request.method == "GET":
+        # data = Articles()
+        result = mysql.get_data()
+        # print(result)
+        return render_template('list.html' , data=result)
+    
+    elif request.method =="POST":
+        title = request.form['title']
+        desc = request.form['desc']
+        author = request.form['author']
+        result = mysql.insert_list(title , desc , author)
+        print(result)
+        return redirect('/list')
+```
+
+게시판 작성 기능을 구현하기 위해서 
+
+dashboard.html 파일을 생성후 다음과 같이 코드를 생성한다.
+
+```html
+{% extends "layouts.html" %}
+{% block nav %}
+{% include 'nav.html' %}
+{% endblock %}
+{% block body %}
+<div class="container" style="margin-top: 3rem;">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">게시판 작성페이지</h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+      </div>
+<form action="/list", method="POST">
+    
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="title" id="form6Example3" class="form-control" />
+      <label class="form-label" for="form6Example3">TITLE</label>
+    </div>
+  
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+      <textarea class="form-control" name="desc" id="form6Example7" rows="4"></textarea>
+      <label class="form-label" for="form6Example7">Additional information</label>
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+        <input type="text" name="author" id="form6Example4" class="form-control" />
+        <label class="form-label" for="form6Example4">Athor</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+  </form>
+</div>
+{% endblock %}
+```
+
+[http://localhost:5000/create_list](http://localhost:5000/create_list) 
+
+GET 방식으로 요청시 dashboard.html 랜더링 되도록
+
+[app.py](http://app.py) 다음과 코드를 추가한다.
+
+```python
+@app.route('/create_list', methods=['GET', 'POST'])
+def create_list():
+    if request.method == "GET":
+        return render_template('dashboard.html')
+```
+
+list.html 에 게시판 작성 버튼을 추가한다.
+
+다음과 같은 부분을 수정한다.
+
+```html
+<div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">게시판 <a  style="text-align:right;" href="/create_list" type="button" class="btn btn-success">게시글 작성</a></h6>
+        </div>
+```

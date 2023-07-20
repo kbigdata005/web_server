@@ -38,6 +38,18 @@ class Mysql:
         db.close()
         return rows
     
+    def get_data(self):
+        db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
+        curs = db.cursor()
+        
+        sql = "select * from list";
+        curs.execute(sql)
+        
+        rows = curs.fetchall()
+        # db.commit()
+        db.close()
+        return rows
+
     def insert_user(self , username , email , phone , password):
         db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
         curs = db.cursor()
@@ -51,6 +63,18 @@ class Mysql:
 
         return result
 
+    def insert_list(self , title , desc , author):
+        db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
+        curs = db.cursor()
+        
+        sql = '''insert into `list` (`title` , `desc` , `author`) values(%s,%s,%s)'''
+        result = curs.execute(sql,[title , desc , author])
+        print(result)
+        db.commit()
+        db.close()
+
+        return result
+    
     def verify_password(self , password ,hashed_password):
         # db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
         # curs = db.cursor()
