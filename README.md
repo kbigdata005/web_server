@@ -40,11 +40,12 @@ requirements.txt 에 있는 내용대로 라이브러리를 설치하는 방법�
 pip install -r requirements.txt
 ```
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/ae2a74f9-df59-447e-b0ca-249d26dd935e)
+
 
 위와 같은 구조로 웹서버를 만든다.
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled%201.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/15a7cc1e-aaa6-4129-9b7e-47ccc859d982)
 
 다음과 같은 기능을 구현하기 위해
 
@@ -146,7 +147,7 @@ index.html 또한 header값을 받아서 단순하게 화면에 보여주기 위
 
 크롬 브라우저에서  GET 방식으로 요청 했을때 다음과 같은 결과를 볼 수 있다.
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled%202.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/b2855f1f-d297-43ad-a4f8-391b49daa147)
 
 다음 과정은 요청 방식에 대해서 GET 방식과 POST 방식을 구분해서 받는 방법을 테스트 하기 위해
 
@@ -184,7 +185,7 @@ def index():
 
 request 하였을때 
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled%203.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/82dd0a92-1bdc-4789-ba3e-f831ac8de359)
 
 위와 같이 나타나기 위해서 
 
@@ -241,7 +242,7 @@ index.html 에 다음과 같이 코드를 변경한다.
 
 제출 버튼을 눌렀을때 console 창에 ‘인사할 내용’부분에 적었던 내용이 잘 나오는지 확인한다.
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled%204.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/5155b0c4-3262-4b7b-bd6a-f2ab4124fa9d)
 
 위와 같이 구현을 하기 위해 
 
@@ -340,7 +341,7 @@ index.html을 다음과 같이 수정한다.
 </html>
 ```
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled%205.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/a89b6d38-38c4-49c9-ae37-641de102bef6)
 
 위와 같은 기능을 구현하기 위하여 app.py를 다음과 같이 코드를 추가한다.
 
@@ -386,7 +387,7 @@ list.html파일을 생성후 다음과 같은 코드를 생성한다.
 
 아래와 같은 사이트를 확인 할 수 있다.
 
-![Untitled](flask%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%207e5953f48f554af0afb7f6dd0fbd65f6/Untitled%206.png)
+![image](https://github.com/kbigdata005/web_server/assets/139095086/cf084cf8-921a-4765-9493-d297c63ba16f)
 
 mysql workbench 를 이용해서 user SChema를 생성한다.
 
@@ -1044,7 +1045,7 @@ list.html 커스터마이징
 mysql의 os 스키마에 list 테이블을 생성하기 위하여 다음과 같은 sql문 실행한다.
 
 ```sql
-CREATE TABLE `os`.`lsit` (
+CREATE TABLE `os`.`list` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(100) NULL,
   `desc` LONGTEXT NULL,
@@ -1163,4 +1164,143 @@ list.html 에 게시판 작성 버튼을 추가한다.
 <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">게시판 <a  style="text-align:right;" href="/create_list" type="button" class="btn btn-success">게시글 작성</a></h6>
         </div>
+```
+
+![image](https://github.com/kbigdata005/web_server/assets/139095086/9abfa784-7b55-4d9b-9a1d-7e7492818548)
+위에서 편집 버튼을 클릭시 해당 게시글에 대한 정보를 편집할 수 있는 기능을 구현한다.
+
+[app.py](http://app.py) 파일에서 @app.route(’/edit/<ids>’) 부분을 다음과 같이 코드를 수정한다.
+
+```python
+@app.route('/edit/<ids>' , methods=['GET', "POST"])
+def edit(ids):
+    db = pymysql.connect(host=mysql.host, user=mysql.user, db=mysql.db, password=mysql.password, charset=mysql.charset)
+    curs = db.cursor()
+
+    sql = f'SELECT * FROM list WHERE `id` = %s;'
+    curs.execute(sql , ids )
+    
+    rows = curs.fetchall()
+    print(rows)
+    db.close()
+    return render_template('list_edit.html' , data=rows)
+```
+
+list_edit.html 파일 생성후 다음과 같이 코드를 생성한다.
+
+```html
+{% extends "layouts.html" %}
+{% block nav %}
+{% include 'nav.html' %}
+{% endblock %}
+{% block body %}
+<div class="container" style="margin-top: 3rem;">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">게시판 편집페이지</h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+      </div>
+<form  action="/edit/{{ data[0][0]}}", method="POST">
+    
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="title" id="form6Example3" class="form-control"  value="{{ data[0][1] }}" />
+      <label class="form-label" for="form6Example3">TITLE</label>
+    </div>
+  
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+      <textarea class="form-control" name="desc" id="form6Example7" rows="4" >{{ data[0][2] }}</textarea>
+      <label class="form-label" for="form6Example7">Additional information</label>
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+        <input type="text" name="author" id="form6Example4" class="form-control"  value="{{ data[0][3] }}"/>
+        <label class="form-label" for="form6Example4">Athor</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+  </form>
+</div>
+{% endblock %}
+```
+
+[http://localhost:5000/edit/<ids>](http://localhost:5000/edit/<ids>) 
+
+POST 방식으로 편집한 데이터를 전송하면 mysql에 테이블이 편집되도록
+
+[mysql.py](http://mysql.py) 의 Mysql 클래스에 update_list 메소드를 생성하여 준다.
+
+```python
+def update_list(self , id, title , desc , author):
+        db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
+        curs = db.cursor()
+        
+        sql = f'UPDATE `list` SET `title`=%s , `desc`=%s , `author`=%s  WHERE `id` = %s;'
+        result = curs.execute(sql,[title , desc , author ,id])
+        print(result)
+        db.commit()
+        db.close()
+
+        return result
+```
+
+[app.py](http://app.py) 파일에서 @app.route(’/edit/<ids>’) 부분을 다음과 같이 코드를 수정한다. 
+
+```python
+@app.route('/edit/<ids>' , methods=['GET', "POST"])
+def edit(ids):
+    if request.method == 'GET':
+        db = pymysql.connect(host=mysql.host, user=mysql.user, db=mysql.db, password=mysql.password, charset=mysql.charset)
+        curs = db.cursor()
+
+        sql = f'SELECT * FROM list WHERE `id` = %s;'
+        curs.execute(sql , ids )
+        
+        rows = curs.fetchall()
+        print(rows[0][2])
+        db.close()
+        return render_template('list_edit.html' , data=rows)
+    
+    elif request.method == 'POST':
+
+        title = request.form['title']
+        desc = request.form['desc']
+        author = request.form['author']
+        print(type(desc))
+        result = mysql.update_list(ids, title, desc , author)
+        print(result)
+        return redirect('/list')
+```
+
+게시판 삭제 기능을 구현하기 위해 
+
+[mysql.py](http://mysql.py) 의 Mysql 클래스 delete_list 메소드를 구현다.
+
+```python
+def delete_list(self , id):
+        db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
+        curs = db.cursor()
+        sql = f'DELETE  FROM `list` WHERE `id` = %s;'
+        result = curs.execute(sql,[id])
+        print(result)
+        db.commit()
+        db.close()
+
+        return result
+```
+
+app.py의 @app.route(’/delete/<ids>) 부분을 
+
+다음과 같이 수정한다.
+
+```python
+@app.route('/delete/<ids>')
+def delete(ids):
+    result = mysql.delete_list(ids)
+    print(result)
+    return redirect('/list')
 ```
