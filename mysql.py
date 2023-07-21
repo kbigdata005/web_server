@@ -75,6 +75,29 @@ class Mysql:
 
         return result
     
+    def update_list(self , id, title , desc , author):
+        db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
+        curs = db.cursor()
+        
+        sql = f'UPDATE `list` SET `title`=%s , `desc`=%s , `author`=%s  WHERE `id` = %s;'
+        result = curs.execute(sql,[title , desc , author ,id])
+        print(result)
+        db.commit()
+        db.close()
+
+        return result
+
+    def delete_list(self , id):
+        db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
+        curs = db.cursor()
+        sql = f'DELETE  FROM `list` WHERE `id` = %s;'
+        result = curs.execute(sql,[id])
+        print(result)
+        db.commit()
+        db.close()
+
+        return result
+
     def verify_password(self , password ,hashed_password):
         # db = pymysql.connect(host=self.host, user=self.user, db=self.db, password=self.password, charset=self.charset)
         # curs = db.cursor()
